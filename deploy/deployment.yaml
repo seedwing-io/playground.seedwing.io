@@ -6,7 +6,7 @@ metadata:
   name: seedwing-policy-server
   namespace: seedwing
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: seedwing-policy-server
