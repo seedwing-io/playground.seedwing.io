@@ -3,9 +3,14 @@ kind: Route
 metadata:
   labels:
     app: seedwing-policy-server
+  annotations:
+    cert-utils-operator.redhat-cop.io/certs-from-secret: letsencrypt-certificate
+    cert-utils-operator.redhat-cop.io/inject-CA: "false"
   name: seedwing
   namespace: seedwing
 spec:
+  tls:
+    termination: edge
   host: playground.seedwing.io
   port:
     targetPort: 8080-8080
