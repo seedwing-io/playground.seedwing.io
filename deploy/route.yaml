@@ -3,7 +3,7 @@ kind: Route
 metadata:
   labels:
     app: seedwing-policy-server
-  name: seedwing-policy-server
+  name: seedwing
   namespace: seedwing
 spec:
   host: playground.seedwing.io
