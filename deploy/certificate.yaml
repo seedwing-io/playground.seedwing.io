@@ -1,0 +1,25 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: lets-encrypt-playground-cert
+  namespace: seedwing
+spec:
+  commonName: playground.seedwing.io
+  dnsNames:
+  - playground.seedwing.io
+  duration: 2160h0m0s
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-staging
+  privateKey:
+    algorithm: ECDSA
+    encoding: PKCS1
+    size: 384
+  renewBefore: 360h0m0s
+  secretName: letsencrypt-certificate
+  secretTemplate:
+    labels:
+      cert-manager-created: "true"
+  subject:
+    organizations:
+    - seedwing
