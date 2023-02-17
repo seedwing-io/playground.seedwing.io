@@ -10,7 +10,7 @@ spec:
   duration: 2160h0m0s
   issuerRef:
     kind: ClusterIssuer
-    name: letsencrypt-staging
+    name: letsencrypt-prod
   privateKey:
     algorithm: ECDSA
     encoding: PKCS1
