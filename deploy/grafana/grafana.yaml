@@ -6,7 +6,7 @@ spec:
   client:
     preferService: true
   ingress:
-    enabled: True
+    enabled: False
     pathType: Prefix
     path: "/"
   config:
