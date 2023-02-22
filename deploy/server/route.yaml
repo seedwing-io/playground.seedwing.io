@@ -11,6 +11,7 @@ metadata:
 spec:
   tls:
     termination: edge
+    insecureEdgeTerminationPolicy: Redirect
   host: playground.seedwing.io
   port:
     targetPort: endpoint
