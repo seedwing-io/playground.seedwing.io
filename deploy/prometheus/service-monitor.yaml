@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: seedwing-policy-server
+  labels:
+    app: seedwing-policy-server
+spec:
+  selector:
+    matchLabels:
+      app: seedwing-policy-server
+  namespaceSelector:
+    any: false
+  endpoints:
+    - port: endpoint

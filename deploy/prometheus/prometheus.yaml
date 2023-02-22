@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: monitoring
+  labels:
+    prometheus: main
+spec:
+  serviceAccountName: prometheus
+  replicas: 2
+  serviceMonitorSelector:
+    matchLabels:
+      app: seedwing-policy-server
+  podMonitorSelector:
+    matchLabels:
+      app: seedwing-policy-server
