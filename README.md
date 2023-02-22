@@ -10,8 +10,18 @@ Manifests for running playground.seedwing.io
 ## Deploying
 
 ```bash
-oc apply -f deploy/
+oc apply -f deploy/server
 ```
+
+## Monitoring
+
+Monitoring requires the [prometheus-operator](https://github.com/prometheus-operator/prometheus-operator) and [grafana-operator](https://github.com/grafana-operator/grafana-operator) to be installed. To configure monitoring:
+
+```bash
+oc apply -f deploy/prometheus
+oc apply -f deploy/grafana
+```
+
 
 ## License
 
