@@ -16,7 +16,7 @@ spec:
         app: seedwing-policy-server
     spec:
       containers:
-        - image: ghcr.io/seedwing-io/swio:tagit2
+        - image: ghcr.io/seedwing-io/swio:latestcheck
           imagePullPolicy: IfNotPresent
           name: seedwing-policy-server
           ports:
