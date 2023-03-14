@@ -44,11 +44,6 @@ jobs:
           git commit deploy/server/deployment.yaml -m 'Update swio image'
           git tag v0.1.0-nightly.${{ needs.args.outputs.commit }}
           git push --follow-tags
-
-  deploy:
-    runs-on: ubuntu-22.04
-    needs: tag
-    steps:
       - name: Install CLI tools from OpenShift Mirror
         uses: redhat-actions/openshift-tools-installer@v1
         with:
