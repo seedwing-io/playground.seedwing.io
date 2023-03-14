@@ -45,20 +45,20 @@ jobs:
           git tag v0.1.0-nightly.${{ needs.args.outputs.commit }}
           git push --follow-tags
 
-    deploy:
-      runs-on: ubuntu-22.04
-      needs: tag
-      steps:
-        - name: Install CLI tools from OpenShift Mirror
-          uses: redhat-actions/openshift-tools-installer@v1
-          with:
-            oc: "4"
-        - name: Authenticate and set context
-          uses: redhat-actions/oc-login@v1
-          with:
-            openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
-            openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
-            namespace: seedwing
-        - name: Deploy Server Update
-          run: |
-            oc apply -f deploy/server/deployment.yaml
+  deploy:
+    runs-on: ubuntu-22.04
+    needs: tag
+    steps:
+      - name: Install CLI tools from OpenShift Mirror
+        uses: redhat-actions/openshift-tools-installer@v1
+        with:
+          oc: "4"
+      - name: Authenticate and set context
+        uses: redhat-actions/oc-login@v1
+        with:
+          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
+          openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
+          namespace: seedwing
+      - name: Deploy Server Update
+        run: |
+          oc apply -f deploy/server/deployment.yaml
