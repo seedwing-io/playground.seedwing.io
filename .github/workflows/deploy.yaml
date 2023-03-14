@@ -32,11 +32,11 @@ jobs:
         uses: actions/checkout@v3
       - name: Install yq
         run: |
-          wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
-          chmod +x /usr/bin/yq
+          wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O yq
+          chmod +x yq
       - name: Update tags
         run: |
-          yq e -i ".spec.template.spec.containers[].image = '${{ needs.args.outputs.imageref }}'" deploy/server/deployment.yaml
+          ./yq e -i ".spec.template.spec.containers[].image = '${{ needs.args.outputs.imageref }}'" deploy/server/deployment.yaml
       - name: Commit and tag
         run: |
           git commit deploy/server/deployment.yaml -m 'Update swio image'
