@@ -42,7 +42,7 @@ jobs:
           git config --global user.email "ci@seedwing.io"
           git config --global user.name "Seedwing CI"
           git commit deploy/server/deployment.yaml -m 'Update swio image'
-          git tag v0.1.0-nightly.${{ needs.args.outputs.commit }}
+          git tag v0.1.0-nightly.${{ needs.args.outputs.commit }} -m 'Tag deployment snapshot'
           git push --follow-tags
       - name: Install CLI tools from OpenShift Mirror
         uses: redhat-actions/openshift-tools-installer@v1
