@@ -22,6 +22,16 @@ oc apply -f deploy/prometheus
 oc apply -f deploy/grafana
 ```
 
+## Continuous Deployment
+
+The playground instance is automatically updated every night. Whenever a nightly or release build in
+the seedwing-policy repository runs, it will trigger the 'deploy' workflow in this repository.
+
+The deploy workflow will update the Kubernetes manifest in the deploy/server/deployment.yaml and
+re-deploy that pointing to the updated image.
+
+For this reason, some permissions are setup for the deployer serviceaccount to be able to apply the
+new version.
 
 ## License
 
