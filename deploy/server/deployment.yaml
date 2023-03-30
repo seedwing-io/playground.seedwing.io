@@ -16,7 +16,7 @@ spec:
         app: seedwing-policy-server
     spec:
       containers:
-        - image: ghcr.io/seedwing-io/swio:0.1.0-nightly.35a449d0
+        - image: ghcr.io/seedwing-io/swio:0.1.0-nightly.e2f0cbbf
           imagePullPolicy: IfNotPresent
           name: seedwing-policy-server
           ports:
