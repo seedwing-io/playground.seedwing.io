@@ -1,12 +1,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: lets-encrypt-playground-cert
+  name: lets-encrypt-playground-monitoring-cert
   namespace: seedwing
 spec:
-  commonName: playground.seedwing.io
+  commonName: monitoring.playground.seedwing.io
   dnsNames:
-  - playground.seedwing.io
+  - monitoring.playground.seedwing.io
   issuerRef:
     kind: ClusterIssuer
     name: letsencrypt-prod
@@ -14,7 +14,7 @@ spec:
     algorithm: ECDSA
     encoding: PKCS1
     size: 384
-  secretName: letsencrypt-certificate
+  secretName: letsencrypt-certificate-monitoring
   secretTemplate:
     labels:
       cert-manager-created: "true"

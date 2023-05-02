@@ -4,7 +4,7 @@ metadata:
   labels:
     app: seedwing-monitoring
   annotations:
-    cert-utils-operator.redhat-cop.io/certs-from-secret: letsencrypt-certificate
+    cert-utils-operator.redhat-cop.io/certs-from-secret: letsencrypt-certificate-monitoring
     cert-utils-operator.redhat-cop.io/inject-CA: "false"
   name: seedwing-grafana
   namespace: seedwing
